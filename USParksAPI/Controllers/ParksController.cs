@@ -26,3 +26,12 @@ namespace USParksAPI.Controllers
     {
       return _db.Parks.ToList();
     }
+    // POST api/parks
+    [HttpPost]
+    public void Post([FromBody] Park park)
+    {
+      _db.Parks.Add(park);
+      _db.SaveChanges();
+    }
+  }
+}
