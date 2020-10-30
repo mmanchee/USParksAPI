@@ -67,6 +67,20 @@ SeedDB
 * Paste URL in browser "http://localhost:6000/swagger/index.html"
 * Explore API
 
+### Authentication Token
+* Open Postman
+* Open a new Tab, set to POST and type "http://localhost:6000/users/authenticate"
+* Click the Body tab, select raw, and type the below.
+```
+{
+  "Username": "test",
+  "Password": "test"
+}
+```
+* Click Send and copy the token
+* Open a new tab, click the Authorization tab, Select 'Bearer Token' from the drop down, and paste the token into Token.
+* You are now able to access this API from Postman.
+
 ## Known Bugs
 
 No Known Bugs
@@ -92,6 +106,8 @@ Main Programs
 ![GitHub](img/Github.png)
 [Mike's GitHub](https://github.com/mmanchee)<br />
 [LinkedIn](https://www.linkedin.com/in/mikemanchee/)<br />
+State Park [Info](https://www.thrillist.com/travel/nation/best-us-state-parks-to-visit-na-pali-coast-state-park)
+Nation Park [Info](https://travel.usnews.com/rankings/best-national-parks-in-the-usa/)
 
 ### License
 
