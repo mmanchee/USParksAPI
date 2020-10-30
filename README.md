@@ -80,7 +80,7 @@ SeedDB
 * Type "dotnet watch run"
 * Paste URL in browser "http://localhost:5000/swagger/"
 * After getting your token, click on the Authorize button
-![Authorize](img/Authorize.jpg)
+![Authorize](USParksAPI/img/Authorize.jpg)
 * Paste in your token and close
 * Explore API
 
@@ -107,7 +107,7 @@ Main Programs
 
 
 ### Other Links
-![GitHub](img/Github.png)
+![GitHub](USParksAPI/img/Github.png)
 [Mike's GitHub](https://github.com/mmanchee)<br />
 [LinkedIn](https://www.linkedin.com/in/mikemanchee/)<br />
 State Park [Info](https://www.thrillist.com/travel/nation/best-us-state-parks-to-visit-na-pali-coast-state-park)
