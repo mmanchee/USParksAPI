@@ -74,5 +74,13 @@ namespace USParksAPI.Controllers
       _db.Parks.Remove(rowToDelete);
       _db.SaveChanges();
     }
+    [HttpGet("Random")]
+    public IEnumerable<Park> Random()
+    {
+      var count = _db.Parks.Count();
+      Random ran = new Random();
+      int skipTo = ran.Next(count);
+      return _db.Parks.OrderBy(r => Guid.NewGuid()).Skip(skipTo).Take(1);
+    }
   }
 }
