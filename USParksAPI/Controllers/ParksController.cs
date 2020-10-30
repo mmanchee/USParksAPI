@@ -52,5 +52,27 @@ namespace USParksAPI.Controllers
       _db.Parks.Add(park);
       _db.SaveChanges();
     }
+    // GET api/parks/5
+    [HttpGet("{id}")]
+    public ActionResult<Park> Get(int id)
+    {
+      return _db.Parks.FirstOrDefault(entry => entry.ParkId == id);
+    }
+    // PUT api/parks/5
+    [HttpPut("{id}")]
+    public void Put(int id, [FromBody] Park park)
+    {
+      park.ParkId = id;
+      _db.Entry(park).State = EntityState.Modified;
+      _db.SaveChanges();
+    }
+    // DELETE api/parks/5
+    [HttpDelete("{id}")]
+    public void Delete(int id)
+    {
+      var rowToDelete = _db.Parks.FirstOrDefault(entry => entry.ParkId == id);
+      _db.Parks.Remove(rowToDelete);
+      _db.SaveChanges();
+    }
   }
 }
