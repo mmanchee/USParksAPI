@@ -22,9 +22,28 @@ namespace USParksAPI.Controllers
 
     // GET api/Parks
     [HttpGet]
-    public ActionResult<IEnumerable<Park>> Get() //Add Search
+    public ActionResult<IEnumerable<Park>> Get(string state, string city, string search) //Add Search
     {
-      return _db.Parks.ToList();
+      var query = _db.Parks.AsQueryable();
+      if (search != null)
+      {
+        query = from park in query
+                where EF.Functions.Like(park.Description, $"{search}")
+                select park;
+      }
+      if (state != null)
+      {
+        query = from park in query
+                where EF.Functions.Like(park.State, $"{state}")
+                select park;
+      }
+      if (city != null)
+      {
+        query = from park in query
+                where EF.Functions.Like(park.City, $"{city}")
+                select park;
+      }
+      return query.ToList();
     }
     // POST api/parks
     [HttpPost]
