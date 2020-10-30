@@ -61,15 +61,10 @@ SeedDB
   * Type "dotnet ef database update" and wait for build confirmation
 
 ### API Second Application
-* this dotnet run works with http://localhost:6000; http://localhost:6001
-### Swagger
-* Type "dotnet watch run"
-* Paste URL in browser "http://localhost:6000/swagger/index.html"
-* Explore API
-
+* this dotnet run works with http://localhost:5000; http://localhost:5001
 ### Authentication Token
 * Open Postman
-* Open a new Tab, set to POST and type "http://localhost:6000/users/authenticate"
+* Open a new Tab, set to POST and type "http://localhost:5000/users/authenticate"
 * Click the Body tab, select raw, and type the below.
 ```
 {
@@ -80,6 +75,15 @@ SeedDB
 * Click Send and copy the token
 * Open a new tab, click the Authorization tab, Select 'Bearer Token' from the drop down, and paste the token into Token.
 * You are now able to access this API from Postman.
+
+### Swagger
+* Type "dotnet watch run"
+* Paste URL in browser "http://localhost:5000/swagger/"
+* After getting your token, click on the Authorize button
+![Authorize](img/Authorize.jpg)
+* Paste in your token and close
+* Explore API
+
 
 ## Known Bugs
 

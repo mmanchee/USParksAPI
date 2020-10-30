@@ -22,13 +22,13 @@ namespace USParksAPI.Controllers
 
     // GET api/Parks
     [HttpGet]
-    public ActionResult<IEnumerable<Park>> Get(string state, string city, string search) //Add Search
+    public ActionResult<IEnumerable<Park>> Get(string state, string city, string name) //Add Search
     {
       var query = _db.Parks.AsQueryable();
-      if (search != null)
+      if (name != null)
       {
         query = from park in query
-                where EF.Functions.Like(park.Description, $"{search}")
+                where EF.Functions.Like(park.Name, $"{name}")
                 select park;
       }
       if (state != null)
